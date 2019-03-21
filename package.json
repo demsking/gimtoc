@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://gitlab.com/demsking/gimtoc/issues"
   },
-  "homepage": "https://gitlab.com/demsking/gimtoc#readme"
+  "homepage": "https://gitlab.com/demsking/gimtoc#readme",
+  "dependencies": {
+    "ast-to-markdown": "^0.2.2",
+    "markdown-to-ast": "^6.0.3",
+    "markdown-toc": "^1.2.0",
+    "md-node-inject": "^0.1.1"
+  }
 }

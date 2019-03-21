@@ -10,6 +10,71 @@ Generate and Inject Markdown Table of Contents
 npm install --save gimtoc
 ```
 
+## Usage
+
+```js
+const gimtoc = require('.')
+
+const mdContent = `
+  # gimtoc
+
+  ## TOC
+
+  ## Usage
+
+  npm install --save gimtoc
+
+  ## License
+
+  MIT
+`
+
+const injectionSection = 'TOC'
+const options = {}
+
+const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
+
+console.log(mdContentWithToc)
+```
+
+**Output**
+
+Print the markdown content with the generated TOC in the injection section
+
+```md
+# gimtoc
+
+## TOC
+
+- [Usage](#usage)
+- [License](#license)
+
+## Usage
+
+npm install --save gimtoc
+
+## License
+
+MIT
+```
+
+## Options
+
+Gimtoc use [markdown-toc](https://www.npmjs.com/package/markdown-toc) to
+generate Markdown TOC. To configure the TOC generation, please refer to the
+[markdown-toc documentation](https://www.npmjs.com/package/markdown-toc#options) for `options` description.
+
+**Title ignored by default**
+
+By default, gimtoc use [options.firsth1 === false](https://www.npmjs.com/package/markdown-toc#optionsfirsth1)
+to remove the markdown title from the generated TOC. You can overwrite this
+by setting `options.firsth1` to `true`.
+
+**Injection section ignored by default**
+
+Since we perform an injection in a markdown section, the injection section is
+ignored when generating the TOC.
+
 ## Contribute
 
 Contributions to Vuedoc Parser are welcome. Here is how you can contribute:
