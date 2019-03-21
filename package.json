@@ -1,0 +1,25 @@
+{
+  "name": "gimtoc",
+  "version": "1.0.0",
+  "description": "Generate and Inject Markdown Table of Contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/demsking/gimtoc.git"
+  },
+  "keywords": [
+    "markdown",
+    "generate",
+    "inject",
+    "toc"
+  ],
+  "author": "Sébastien Demanou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/demsking/gimtoc/issues"
+  },
+  "homepage": "https://gitlab.com/demsking/gimtoc#readme"
+}

@@ -1,0 +1,8 @@
+test
+coverage
+scripts
+.*
+sample.js
+result.json
+yarn.lock
+*.tgz
