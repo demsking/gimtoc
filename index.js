@@ -3,8 +3,8 @@ const ast = require('markdown-to-ast')
 const inject = require('md-node-inject')
 const toMarkdown = require('ast-to-markdown')
 
-module.exports = function (mdContent, injectionSection, options = {}) {
-  const _options = {
+module.exports = (mdContent, injectionSection, options = {}) => {
+  const opts = {
     firsth1: options.firsth1 || false,
     filter (str, ele, arr) {
       let result = true
@@ -13,6 +13,7 @@ module.exports = function (mdContent, injectionSection, options = {}) {
         result = options.filter(str, ele, arr)
       }
 
+      /* eslint-disable-next-line arrow-body-style */
       return result && !ele.children.some(({ content }) => {
         return content === injectionSection
       })
@@ -20,7 +21,7 @@ module.exports = function (mdContent, injectionSection, options = {}) {
   }
 
   const mdAst = ast.parse(mdContent)
-  const tocContent = toc(mdContent, _options).content
+  const tocContent = toc(mdContent, opts).content
   const tocAst = ast.parse(tocContent)
 
   const mergedAst = inject(injectionSection, mdAst, tocAst)

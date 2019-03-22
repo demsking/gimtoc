@@ -29,7 +29,7 @@ module.exports = {
         ignoreTemplateLiterals: true
       }
     ],
-    'complexity': [ 'error', { max: 40 } ],
+    'complexity': [ 'error', { max: 20 } ],
     'no-use-before-define': [
       'error',
       {

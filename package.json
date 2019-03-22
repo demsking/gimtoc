@@ -4,7 +4,9 @@
   "description": "Generate and Inject Markdown Table of Contents",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "lint": "eslint index.js test",
+    "lint:fix": "eslint --fix index.js test"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,11 @@
     "markdown-to-ast": "^6.0.3",
     "markdown-toc": "^1.2.0",
     "md-node-inject": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
