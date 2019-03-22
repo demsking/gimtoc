@@ -13,7 +13,7 @@ npm install --save gimtoc
 ## Usage
 
 ```js
-const gimtoc = require('.')
+const gimtoc = require('gimtoc')
 
 const mdContent = `
   # gimtoc
