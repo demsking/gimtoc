@@ -24,8 +24,12 @@ module.exports = (mdContent, injectionSection, options = {}) => {
   const tocContent = toc(mdContent, opts).content
   const tocAst = ast.parse(tocContent)
 
-  const mergedAst = inject(injectionSection, mdAst, tocAst)
-  const mergedContent = toMarkdown(mergedAst)
+  try {
+    const mergedAst = inject(injectionSection, mdAst, tocAst)
+    const mergedContent = toMarkdown(mergedAst)
 
-  return mergedContent
+    return mergedContent
+  } catch (e) {
+    throw e
+  }
 }
