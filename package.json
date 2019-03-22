@@ -28,7 +28,7 @@
     "ast-to-markdown": "^0.2.2",
     "markdown-to-ast": "^6.0.3",
     "markdown-toc": "^1.2.0",
-    "md-node-inject": "^0.1.1"
+    "md-node-inject": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.15.3",
