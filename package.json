@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Generate and Inject Markdown Table of Contents",
   "main": "index.js",
+  "bin": {
+    "gimtoc": "./bin/cli.js"
+  },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "lint": "eslint index.js lib test",
+    "lint:fix": "eslint --fix index.js lib test"
   },
   "repository": {
     "type": "git",
@@ -21,5 +26,21 @@
   "bugs": {
     "url": "https://gitlab.com/demsking/gimtoc/issues"
   },
-  "homepage": "https://gitlab.com/demsking/gimtoc#readme"
+  "homepage": "https://gitlab.com/demsking/gimtoc#readme",
+  "dependencies": {
+    "ast-to-markdown": "^0.2.2",
+    "markdown-to-ast": "^6.0.3",
+    "markdown-toc": "^1.2.0",
+    "md-node-inject": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.5.0"
+  },
+  "engines": {
+    "node": ">=8"
+  }
 }
