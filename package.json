@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Generate and Inject Markdown Table of Contents",
   "main": "index.js",
+  "bin": {
+    "gimtoc": "./bin/cli.js"
+  },
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint index.js test",
-    "lint:fix": "eslint --fix index.js test"
+    "lint": "eslint index.js lib test",
+    "lint:fix": "eslint --fix index.js lib test"
   },
   "repository": {
     "type": "git",

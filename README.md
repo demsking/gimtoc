@@ -7,10 +7,36 @@ Generate and Inject Markdown Table of Contents
 ## Install
 
 ```sh
+# install gimtoc globally as  binary
+npm install -g gimtoc
+
+# install gimtoc as npm dependency
 npm install --save gimtoc
 ```
 
-## Usage
+## CLI Usage
+
+```sh
+# print package version
+gimtoc -v
+gimtoc --version
+
+# print CLI usage
+gimtoc -h
+gimtoc --help
+
+# print merged README.md with injected TOC
+gimtoc -f README.md -s TOC
+gimtoc --file README.md --section TOC
+
+# update the README.md's TOC section
+gimtoc --file README.md --section TOC > README.md
+
+# update the README.md's TOC section using pipe
+cat README.md | gimtoc -i -s TOC > README.md
+```
+
+## Programmatic Usage
 
 ```js
 const gimtoc = require('gimtoc')
