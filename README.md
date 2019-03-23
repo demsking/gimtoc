@@ -26,14 +26,14 @@ gimtoc -h
 gimtoc --help
 
 # print merged README.md with injected TOC
-gimtoc -f README.md -s TOC
-gimtoc --file README.md --section TOC
+gimtoc -f README.md -s "Table of Contents"
+gimtoc --file README.md --section "Table of Contents"
 
-# update the README.md's TOC section
-gimtoc --file README.md --section TOC > README.md
+# update the README.md's section called TOC
+gimtoc --file README.md --section 'TOC' --output README.md
 
 # update the README.md's TOC section using pipe
-cat README.md | gimtoc -i -s TOC > README.md
+cat README.md | gimtoc -i -s 'TOC' -o README.md
 ```
 
 ## Programmatic Usage
