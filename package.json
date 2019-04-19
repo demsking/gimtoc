@@ -22,6 +22,9 @@
     "toc"
   ],
   "author": "Sébastien Demanou",
+  "contributors": [
+    "Sébastien Demanou (https://gitlab.com/demsking)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://gitlab.com/demsking/gimtoc/issues"
