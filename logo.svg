@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 66.145832 66.145835"
+   version="1.1"
+   id="svg73616"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/demsking/Workspace/projects/gimtoc/logo.png"
+   inkscape:export-xdpi="362.82999"
+   inkscape:export-ydpi="362.82999">
+  <metadata
+     id="metadata73622">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs73620" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     id="namedview73618"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="6.228661"
+     inkscape:cx="48.820768"
+     inkscape:cy="34.463809"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g73614" />
+  <g
+     transform="translate(0,-230.85415)"
+     id="g73614">
+    <rect
+       style="opacity:1;fill:#880e4f;fill-opacity:1;stroke:none;stroke-width:0.31560653;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       width="48.973091"
+       height="59.429768"
+       x="9.6490355"
+       y="234.33972"
+       ry="0"
+       id="rect73607" />
+    <rect
+       ry="0"
+       y="251.25742"
+       x="9.6490355"
+       height="25.594385"
+       width="48.973091"
+       style="opacity:1;fill:#000000;fill-opacity:0.33181819;stroke:none;stroke-width:0.20711726;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect73609" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="34.324623"
+       y="270.25128"
+       id="text73611"><tspan
+         style="font-size:17.33333397px"
+         id="tspan73626">TOC</tspan></text>
+    <g
+       id="g73649"
+       transform="matrix(0.10220548,0,0,0.10220548,4.2070534,265.2947)"
+       style="fill:#ffffff">
+      <path
+         id="path73637"
+         d="m 284.56788,22.567323 -30,-33 h 20 v -34.999999 h 20 v 34.999999 h 20.00001 z"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccc"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>
