@@ -34,6 +34,9 @@ gimtoc --file README.md --section 'TOC' --output README.md
 
 # update the README.md's TOC section using pipe
 cat README.md | gimtoc -i -s 'TOC' -o README.md
+
+# generate a TOC with BitBucket compatibility (option --anchor)
+gimtoc --file README.md --section 'TOC' --anchor --output README.md
 ```
 
 ## Programmatic Usage
@@ -42,21 +45,26 @@ cat README.md | gimtoc -i -s 'TOC' -o README.md
 const gimtoc = require('gimtoc')
 
 const mdContent = `
-  # gimtoc
+  # Awesome Mardown Documentation
 
-  ## TOC
+  ## Table of Contents
 
   ## Usage
 
-  npm install --save gimtoc
+  npm install -g gimtoc
 
   ## License
 
   MIT
 `
 
-const injectionSection = 'TOC'
-const options = {}
+const injectionSection = 'Table of Contents'
+const options = {
+  // use this option to enable the BitBucket compatibility.
+  // the default value is false
+  anchor: false
+  // see https://www.npmjs.com/package/markdown-toc#options for other options
+}
 
 const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
 
@@ -68,16 +76,16 @@ console.log(mdContentWithToc)
 Print the markdown content with the generated TOC in the injection section
 
 ```md
-# gimtoc
+# Awesome Mardown Documentation
 
-## TOC
+## Table of Contents
 
 - [Usage](#usage)
 - [License](#license)
 
 ## Usage
 
-npm install --save gimtoc
+npm install -g gimtoc
 
 ## License
 
@@ -88,7 +96,8 @@ MIT
 
 Gimtoc use [markdown-toc](https://www.npmjs.com/package/markdown-toc) to
 generate Markdown TOC. To configure the TOC generation, please refer to the
-[markdown-toc documentation](https://www.npmjs.com/package/markdown-toc#options) for `options` description.
+[markdown-toc documentation](https://www.npmjs.com/package/markdown-toc#options)
+for `options` description.
 
 **Title ignored by default**
 
@@ -118,10 +127,12 @@ Given a version number `MAJOR.MINOR.PATCH`, increment the:
 - `MINOR` version when you add functionality in a backwards-compatible manner, and
 - `PATCH` version when you make backwards-compatible bug fixes.
 
-Additional labels for pre-release and build metadata are available as extensions to the `MAJOR.MINOR.PATCH` format.
+Additional labels for pre-release and build metadata are available as extensions
+to the `MAJOR.MINOR.PATCH` format.
 
 See [SemVer.org](https://semver.org/) for more details.
 
 ## License
 
-Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/master/LICENSE) file for more details.
+Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/master/LICENSE)
+file for more details.

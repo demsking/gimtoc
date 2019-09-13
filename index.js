@@ -24,12 +24,14 @@ module.exports = (mdContent, injectionSection, options = {}) => {
   const tocContent = toc(mdContent, opts).content
   const tocAst = ast.parse(tocContent)
 
-  try {
-    const mergedAst = inject(injectionSection, mdAst, tocAst)
-    const mergedContent = toMarkdown(mergedAst)
+  const mergedAst = inject(injectionSection, mdAst, tocAst)
 
-    return mergedContent
-  } catch (e) {
-    throw e
+  if (options.anchor) {
+    /* eslint-disable-next-line global-require */
+    const { generateAnchors } = require('./lib/anchors')
+
+    generateAnchors(tocAst, mergedAst)
   }
+
+  return toMarkdown(mergedAst)
 }
