@@ -13,7 +13,11 @@ const mdContent = [
   '',
   '## License',
   '',
-  'MIT'
+  'MIT',
+  '',
+  '## Title with spaces',
+  '',
+  'Bla bla'
 ].join('\n')
 
 describe('gimtoc', () => {
@@ -21,7 +25,7 @@ describe('gimtoc', () => {
     const injectionSection = 'TOC'
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n'
 
     const mdContentWithToc = gimtoc(mdContent, injectionSection)
 
@@ -37,7 +41,7 @@ describe('gimtoc', () => {
     }
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n'
 
     const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
 
@@ -51,7 +55,7 @@ describe('gimtoc', () => {
     }
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
 
     const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
 
@@ -66,10 +70,10 @@ describe('gimtoc', () => {
     }
 
     /* eslint-disable-next-line max-len */
-    const mdContent = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n'
+    const mdContent = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
 
     const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
 
