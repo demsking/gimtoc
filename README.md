@@ -112,7 +112,7 @@ ignored when generating the TOC.
 
 ## Contribute
 
-Contributions to Vuedoc Parser are welcome. Here is how you can contribute:
+Contributions to Gimtoc are welcome. Here is how you can contribute:
 
 1. [Submit bugs or a feature request](https://gitlab.com/demsking/gimtoc/issues) and help us verify fixes as they are checked in
 2. Write code for a bug fix or for your new awesome feature
