@@ -2,7 +2,7 @@
 
 Generate and Inject Markdown Table of Contents
 
-[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc) [![Build status](https://gitlab.com/demsking/gimtoc/badges/master/build.svg)](https://gitlab.com/demsking/gimtoc/pipelines) [![Test coverage](https://gitlab.com/demsking/gimtoc/badges/master/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
+[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc) [![Build status](https://gitlab.com/demsking/gimtoc/badges/master/pipeline.svg)](https://gitlab.com/demsking/gimtoc/pipelines) [![Test coverage](https://gitlab.com/demsking/gimtoc/badges/master/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
 
 ## Install
 
