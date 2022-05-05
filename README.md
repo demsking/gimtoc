@@ -115,12 +115,7 @@ ignored when generating the TOC.
 
 ## Contribute
 
-Contributions to Gimtoc are welcome. Here is how you can contribute:
-
-1. [Submit bugs or a feature request](https://gitlab.com/demsking/gimtoc/issues) and help us verify fixes as they are checked in
-2. Write code for a bug fix or for your new awesome feature
-3. Write test cases for your changes
-4. [Submit merge requests](https://gitlab.com/demsking/gimtoc/merge_requests) for bug fixes and features and discuss existing proposals
+Please follow [CONTRIBUTING.md](https://gitlab.com/demsking/gimtoc/blob/master/CONTRIBUTING.md).
 
 ## Versioning
 
