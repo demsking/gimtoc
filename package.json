@@ -23,7 +23,10 @@
   ],
   "author": "Sébastien Demanou",
   "contributors": [
-    "Sébastien Demanou (https://gitlab.com/demsking)"
+    {
+      "name": "Sébastien Demanou",
+      "url": "https://gitlab.com/demsking"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -31,17 +34,17 @@
   },
   "homepage": "https://gitlab.com/demsking/gimtoc#readme",
   "dependencies": {
-    "ast-to-markdown": "^0.2.2",
-    "markdown-to-ast": "^6.0.3",
+    "@textlint/markdown-to-ast": "^12.1.1",
+    "ast-to-markdown": "^1.0.0",
     "markdown-toc": "^1.2.0",
-    "md-node-inject": "^1.0.0"
+    "md-node-inject": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.20.2",
-    "jest": "^26.0.1"
+    "jest": "^28.0.3"
   },
   "engines": {
     "node": ">=8"

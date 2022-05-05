@@ -1,5 +1,5 @@
 const toc = require('markdown-toc')
-const ast = require('markdown-to-ast')
+const ast = require('@textlint/markdown-to-ast')
 const inject = require('md-node-inject')
 const toMarkdown = require('ast-to-markdown')
 
