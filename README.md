@@ -10,7 +10,7 @@ Generate and Inject Markdown Table of Contents
 ## Install
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
-: Node 12+ is needed to use it and it must be imported instead of required.
+: Node 14+ is needed to use it and it must be imported instead of required.
 
 ```sh
 # install gimtoc globally as  binary
@@ -48,10 +48,10 @@ gimtoc --file README.md --section 'TOC' --anchor --output README.md
 ## Programmatic Usage
 
 ```js
-import gimtoc from 'gimtoc';
+import { gimtoc } from 'gimtoc';
 
 const mdContent = `
-  # Awesome Mardown Documentation
+  # Awesome Markdown Documentation
 
   ## Table of Contents
 
@@ -82,7 +82,7 @@ console.log(mdContentWithToc);
 Print the markdown content with the generated TOC in the injection section
 
 ```md
-# Awesome Mardown Documentation
+# Awesome Markdown Documentation
 
 ## Table of Contents
 

@@ -2,16 +2,15 @@ import toc from 'markdown-toc';
 import ast from '@textlint/markdown-to-ast';
 import inject from 'md-node-inject';
 import toMarkdown from 'ast-to-markdown';
-import { generateAnchors } from './lib/anchors';
 
-export default function gimtoc(mdContent, injectionSection, options = {}) {
+export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anchor = false, filter } = {}) {
   const opts = {
-    firsth1: options.firsth1 || false,
+    firsth1,
     filter (str, ele, arr) {
       let result = true;
 
-      if (options.filter instanceof Function) {
-        result = options.filter(str, ele, arr);
+      if (filter instanceof Function) {
+        result = filter(str, ele, arr);
       }
 
       /* eslint-disable-next-line arrow-body-style */
@@ -24,10 +23,11 @@ export default function gimtoc(mdContent, injectionSection, options = {}) {
   const mdAst = ast.parse(mdContent);
   const tocContent = toc(mdContent, opts).content;
   const tocAst = ast.parse(tocContent);
-
   const mergedAst = inject(injectionSection, mdAst, tocAst);
 
-  if (options.anchor) {
+  if (anchor) {
+    const { generateAnchors } = await import('./lib/anchors');
+
     generateAnchors(tocAst, mergedAst);
   }
 
