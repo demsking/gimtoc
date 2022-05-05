@@ -2,12 +2,13 @@
   "name": "gimtoc",
   "version": "1.3.3",
   "description": "Generate and Inject Markdown Table of Contents",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./index.js",
   "bin": {
     "gimtoc": "./bin/cli.js"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
     "lint": "eslint index.js lib test",
     "lint:fix": "eslint --fix index.js lib test"
   },
@@ -47,6 +48,6 @@
     "jest": "^28.0.3"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=12.20"
   }
 }

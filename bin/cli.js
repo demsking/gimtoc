@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const cli = require('../lib/cli')
+import cli from '../lib/cli'
 
 if (process.argv.length < 3) {
   process.stderr.write(cli.usage)

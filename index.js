@@ -1,37 +1,35 @@
-const toc = require('markdown-toc')
-const ast = require('@textlint/markdown-to-ast')
-const inject = require('md-node-inject')
-const toMarkdown = require('ast-to-markdown')
+import toc from 'markdown-toc';
+import ast from '@textlint/markdown-to-ast';
+import inject from 'md-node-inject';
+import toMarkdown from 'ast-to-markdown';
+import { generateAnchors } from './lib/anchors';
 
-module.exports = (mdContent, injectionSection, options = {}) => {
+export default function gimtoc(mdContent, injectionSection, options = {}) {
   const opts = {
     firsth1: options.firsth1 || false,
     filter (str, ele, arr) {
-      let result = true
+      let result = true;
 
       if (options.filter instanceof Function) {
-        result = options.filter(str, ele, arr)
+        result = options.filter(str, ele, arr);
       }
 
       /* eslint-disable-next-line arrow-body-style */
       return result && !ele.children.some(({ content }) => {
-        return content === injectionSection
-      })
+        return content === injectionSection;
+      });
     }
-  }
+  };
 
-  const mdAst = ast.parse(mdContent)
-  const tocContent = toc(mdContent, opts).content
-  const tocAst = ast.parse(tocContent)
+  const mdAst = ast.parse(mdContent);
+  const tocContent = toc(mdContent, opts).content;
+  const tocAst = ast.parse(tocContent);
 
-  const mergedAst = inject(injectionSection, mdAst, tocAst)
+  const mergedAst = inject(injectionSection, mdAst, tocAst);
 
   if (options.anchor) {
-    /* eslint-disable-next-line global-require */
-    const { generateAnchors } = require('./lib/anchors')
-
-    generateAnchors(tocAst, mergedAst)
+    generateAnchors(tocAst, mergedAst);
   }
 
-  return toMarkdown(mergedAst)
+  return toMarkdown(mergedAst);
 }
