@@ -1,4 +1,4 @@
-image: node:lts-slim
+image: node:lts-alpine
 
 stages:
   - test
@@ -42,7 +42,7 @@ coverage report:
     paths:
       - public
   only:
-    - master
+    - main
   environment:
     name: coverage report
     url: https://demsking.gitlab.io/gimtoc
