@@ -3,7 +3,7 @@ import ast from '@textlint/markdown-to-ast';
 import inject from 'md-node-inject';
 import toMarkdown from 'ast-to-markdown';
 
-export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anchor = false, filter } = {}) {
+export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anchors = false, filter } = {}) {
   const opts = {
     firsth1,
     filter (str, ele, arr) {
@@ -25,7 +25,7 @@ export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anc
   const tocAst = ast.parse(tocContent);
   const mergedAst = inject(injectionSection, mdAst, tocAst);
 
-  if (anchor) {
+  if (anchors) {
     const { generateAnchors } = await import('./lib/anchors');
 
     generateAnchors(tocAst, mergedAst);

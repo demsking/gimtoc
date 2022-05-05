@@ -8,9 +8,9 @@ declare module gimtoc {
     firsth1?: boolean;
 
     /**
-     * Generate anchors
+     * Generate links anchors
      */
-    anchor?: boolean;
+    anchors?: boolean;
 
     /**
      * str - the actual heading string

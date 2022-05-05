@@ -51,7 +51,7 @@ describe('gimtoc', () => {
   it('it should generate & inject toc with options.anchor', async () => {
     const injectionSection = 'TOC';
     const options = {
-      anchor: true
+      anchors: true
     };
 
     /* eslint-disable-next-line max-len */
@@ -63,10 +63,10 @@ describe('gimtoc', () => {
   });
 
   /* eslint-disable-next-line max-len */
-  it('it should ignore injection of anchors on title with existing anchor', async () => {
+  it('it should ignore injection of anchors on title with existing anchors', async () => {
     const injectionSection = 'TOC';
     const options = {
-      anchor: true
+      anchors: true
     };
 
     /* eslint-disable-next-line max-len */

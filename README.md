@@ -66,15 +66,14 @@ const mdContent = `
 
 const injectionSection = 'Table of Contents';
 const options = {
-  // use this option to enable the BitBucket compatibility.
+  // use this option to generate links anchors
   // the default value is false
-  anchor: false
+  anchors: false
   // see https://www.npmjs.com/package/markdown-toc#options for other options
 };
 
-const mdContentWithToc = gimtoc(mdContent, injectionSection, options);
-
-console.log(mdContentWithToc);
+gimtoc(mdContent, injectionSection, options)
+  .then((mdContentWithToc) => console.log(mdContentWithToc));
 ```
 
 **Output**
