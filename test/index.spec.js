@@ -1,4 +1,4 @@
-const gimtoc = require('..')
+import { gimtoc } from '..';
 
 /* global describe it expect */
 
@@ -18,71 +18,71 @@ const mdContent = [
   '## Title with spaces',
   '',
   'Bla bla'
-].join('\n')
+].join('\n');
 
 describe('gimtoc', () => {
-  it('it should successfully generate & inject toc', () => {
-    const injectionSection = 'TOC'
+  it('it should successfully generate & inject toc', async () => {
+    const injectionSection = 'TOC';
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n';
 
-    const mdContentWithToc = gimtoc(mdContent, injectionSection)
+    const mdContentWithToc = await gimtoc(mdContent, injectionSection);
 
-    expect(mdContentWithToc).toBe(expected)
-  })
+    expect(mdContentWithToc).toBe(expected);
+  });
 
-  it('it should generate & inject toc with custom options.filter', () => {
-    const injectionSection = 'TOC'
+  it('it should generate & inject toc with custom options.filter', async () => {
+    const injectionSection = 'TOC';
     const options = {
       filter (str, ele) {
-        return ele.children.some(({ content }) => content !== 'License')
+        return ele.children.some(({ content }) => content !== 'License');
       }
-    }
+    };
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n';
 
-    const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
+    const mdContentWithToc = await gimtoc(mdContent, injectionSection, options);
 
-    expect(mdContentWithToc).toBe(expected)
-  })
+    expect(mdContentWithToc).toBe(expected);
+  });
 
-  it('it should generate & inject toc with options.anchor', () => {
-    const injectionSection = 'TOC'
+  it('it should generate & inject toc with options.anchor', async () => {
+    const injectionSection = 'TOC';
     const options = {
-      anchor: true
-    }
+      anchors: true
+    };
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n';
 
-    const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
+    const mdContentWithToc = await gimtoc(mdContent, injectionSection, options);
 
-    expect(mdContentWithToc).toBe(expected)
-  })
+    expect(mdContentWithToc).toBe(expected);
+  });
 
   /* eslint-disable-next-line max-len */
-  it('it should ignore injection of anchors on title with existing anchor', () => {
-    const injectionSection = 'TOC'
+  it('it should ignore injection of anchors on title with existing anchors', async () => {
+    const injectionSection = 'TOC';
     const options = {
-      anchor: true
-    }
+      anchors: true
+    };
 
     /* eslint-disable-next-line max-len */
-    const mdContent = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
+    const mdContent = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n\n## Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n';
 
     /* eslint-disable-next-line max-len */
-    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n'
+    const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## <a id="usage"></a>Usage\n\nnpm install --save gimtoc\n\n## <a id="license"></a>License\n\nMIT\n\n## <a id="title-with-spaces"></a>Title with spaces\n\nBla bla\n';
 
-    const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
+    const mdContentWithToc = await gimtoc(mdContent, injectionSection, options);
 
-    expect(mdContentWithToc).toBe(expected)
-  })
+    expect(mdContentWithToc).toBe(expected);
+  });
 
   it('it should generate & inject toc with custom options.filter', () => {
-    const injectionSection = 'Missing section'
+    const injectionSection = 'Missing section';
 
-    expect(() => gimtoc(mdContent, injectionSection)).toThrow()
-  })
-})
+    expect(() => gimtoc(mdContent, injectionSection)).rejects.toThrow(/not found/i);
+  });
+});

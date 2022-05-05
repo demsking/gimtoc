@@ -2,9 +2,15 @@
 
 Generate and Inject Markdown Table of Contents
 
-[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc) [![Build status](https://gitlab.com/demsking/gimtoc/badges/master/pipeline.svg)](https://gitlab.com/demsking/gimtoc/pipelines) [![Test coverage](https://gitlab.com/demsking/gimtoc/badges/master/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
+[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc)
+[![Build status](https://gitlab.com/demsking/gimtoc/badges/main/pipeline.svg)](https://gitlab.com/demsking/gimtoc/pipelines)
+[![Test coverage](https://gitlab.com/demsking/gimtoc/badges/main/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
+[![Buy me a beer](https://img.shields.io/badge/Buy%20me-a%20beer-1f425f.svg)](https://www.buymeacoffee.com/demsking)
 
 ## Install
+
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
+: Node 14+ is needed to use it and it must be imported instead of required.
 
 ```sh
 # install gimtoc globally as  binary
@@ -42,10 +48,10 @@ gimtoc --file README.md --section 'TOC' --anchor --output README.md
 ## Programmatic Usage
 
 ```js
-const gimtoc = require('gimtoc')
+import { gimtoc } from 'gimtoc';
 
 const mdContent = `
-  # Awesome Mardown Documentation
+  # Awesome Markdown Documentation
 
   ## Table of Contents
 
@@ -56,19 +62,18 @@ const mdContent = `
   ## License
 
   MIT
-`
+`;
 
-const injectionSection = 'Table of Contents'
+const injectionSection = 'Table of Contents';
 const options = {
-  // use this option to enable the BitBucket compatibility.
+  // use this option to generate links anchors
   // the default value is false
-  anchor: false
+  anchors: false
   // see https://www.npmjs.com/package/markdown-toc#options for other options
-}
+};
 
-const mdContentWithToc = gimtoc(mdContent, injectionSection, options)
-
-console.log(mdContentWithToc)
+gimtoc(mdContent, injectionSection, options)
+  .then((mdContentWithToc) => console.log(mdContentWithToc));
 ```
 
 **Output**
@@ -76,7 +81,7 @@ console.log(mdContentWithToc)
 Print the markdown content with the generated TOC in the injection section
 
 ```md
-# Awesome Mardown Documentation
+# Awesome Markdown Documentation
 
 ## Table of Contents
 
@@ -110,14 +115,26 @@ by setting `options.firsth1` to `true`.
 Since we perform an injection in a markdown section, the injection section is
 ignored when generating the TOC.
 
+## Development Setup
+
+1. [Install Nix Package Manager](https://nixos.org/manual/nix/stable/installation/installing-binary.html)
+
+2. [Install `direnv` with your OS package manager](https://direnv.net/docs/installation.html#from-system-packages)
+
+3. [Hook it `direnv` into your shell](https://direnv.net/docs/hook.html)
+
+4. At the top-level of your project run:
+
+   ```sh
+   direnv allow
+   ```
+
+   > The next time your launch your terminal and enter the top-level of your
+   > project, `direnv` will check for changes.
+
 ## Contribute
 
-Contributions to Gimtoc are welcome. Here is how you can contribute:
-
-1. [Submit bugs or a feature request](https://gitlab.com/demsking/gimtoc/issues) and help us verify fixes as they are checked in
-2. Write code for a bug fix or for your new awesome feature
-3. Write test cases for your changes
-4. [Submit merge requests](https://gitlab.com/demsking/gimtoc/merge_requests) for bug fixes and features and discuss existing proposals
+Please follow [CONTRIBUTING.md](https://gitlab.com/demsking/gimtoc/blob/main/CONTRIBUTING.md).
 
 ## Versioning
 
@@ -134,5 +151,5 @@ See [SemVer.org](https://semver.org/) for more details.
 
 ## License
 
-Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/master/LICENSE)
+Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/main/LICENSE)
 file for more details.

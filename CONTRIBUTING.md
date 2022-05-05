@@ -1,6 +1,7 @@
-# Contributing to gimtoc
+# Contributing to Gimtoc
 
 ## Before Submitting an Issue
+
 Check that [our issue database](https://gitlab.com/demsking/gimtoc/issues)
 doesn't already include that problem or suggestion before submitting an issue.
 If you find a match, you can use the "subscribe" button to get notified on
@@ -10,6 +11,7 @@ have ways to reproduce the issue or have additional information that may help
 resolving the issue, please leave a comment.
 
 ## Writing Good Bug Reports and Feature Requests
+
 Please file a single issue per problem and feature request. Do not file combo 
 issues. Please do not submit multiple comments on a single issue - write your 
 issue with all the environmental information and reproduction steps so that an 
@@ -29,7 +31,19 @@ by providing a complete assessment of your system and the steps necessary to
 reproduce the issue.
 
 Therefore:
+
 * The details of your environment including OS version, NodeJS version.
 * Provide reproducible steps, what the result of the steps was, and what you 
-would have expected.
+  would have expected.
 * A detailed description of the behavior that you expect.
+
+## Contribute
+
+Contributions to Gimtoc are welcome. Here is how you can contribute:
+
+1. [Submit bugs or a feature request](https://gitlab.com/demsking/gimtoc/issues)
+   and help us verify fixes as they are checked in
+2. Write code for a bug fix or for your new awesome feature
+3. Write test cases for your changes
+4. [Submit merge requests](https://gitlab.com/demsking/gimtoc/merge_requests)
+   for bug fixes and features and discuss existing proposals
