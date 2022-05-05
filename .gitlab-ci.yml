@@ -47,6 +47,7 @@ sast:
 pages:
   stage: publish
   needs: &security-jobs
+    - tests & coverage
     - dependencies check
   dependencies:
     - tests & coverage
