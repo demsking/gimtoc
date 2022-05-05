@@ -9,8 +9,7 @@
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "lint": "eslint index.js lib test",
-    "lint:fix": "eslint --fix index.js lib test"
+    "lint": "eslint index.js lib bin test"
   },
   "repository": {
     "type": "git",
