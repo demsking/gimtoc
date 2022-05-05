@@ -2,7 +2,10 @@
 
 Generate and Inject Markdown Table of Contents
 
-[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc) [![Build status](https://gitlab.com/demsking/gimtoc/badges/master/pipeline.svg)](https://gitlab.com/demsking/gimtoc/pipelines) [![Test coverage](https://gitlab.com/demsking/gimtoc/badges/master/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
+[![npm](https://img.shields.io/npm/v/gimtoc.svg)](https://www.npmjs.com/package/gimtoc)
+[![Build status](https://gitlab.com/demsking/gimtoc/badges/main/pipeline.svg)](https://gitlab.com/demsking/gimtoc/pipelines)
+[![Test coverage](https://gitlab.com/demsking/gimtoc/badges/main/coverage.svg)](https://gitlab.com/demsking/gimtoc/-/jobs)
+[![Buy me a beer](https://img.shields.io/badge/Buy%20me-a%20beer-1f425f.svg)](https://www.buymeacoffee.com/demsking)
 
 ## Install
 
@@ -113,9 +116,26 @@ by setting `options.firsth1` to `true`.
 Since we perform an injection in a markdown section, the injection section is
 ignored when generating the TOC.
 
+## Development Setup
+
+1. [Install Nix Package Manager](https://nixos.org/manual/nix/stable/installation/installing-binary.html)
+
+2. [Install `direnv` with your OS package manager](https://direnv.net/docs/installation.html#from-system-packages)
+
+3. [Hook it `direnv` into your shell](https://direnv.net/docs/hook.html)
+
+4. At the top-level of your project run:
+
+   ```sh
+   direnv allow
+   ```
+
+   > The next time your launch your terminal and enter the top-level of your
+   > project, `direnv` will check for changes.
+
 ## Contribute
 
-Please follow [CONTRIBUTING.md](https://gitlab.com/demsking/gimtoc/blob/master/CONTRIBUTING.md).
+Please follow [CONTRIBUTING.md](https://gitlab.com/demsking/gimtoc/blob/main/CONTRIBUTING.md).
 
 ## Versioning
 
@@ -132,5 +152,5 @@ See [SemVer.org](https://semver.org/) for more details.
 
 ## License
 
-Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/master/LICENSE)
+Under the MIT license. See [LICENSE](https://gitlab.com/demsking/gimtoc/blob/main/LICENSE)
 file for more details.
