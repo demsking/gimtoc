@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { usage, exec } from '../lib/cli';
+import { usage, exec } from '../lib/cli.js';
 
 if (process.argv.length < 3) {
   process.stderr.write(usage);
