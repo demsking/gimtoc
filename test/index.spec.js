@@ -1,4 +1,4 @@
-import { gimtoc } from '..';
+import { gimtoc } from '../index.js';
 
 /* global describe it expect */
 

@@ -26,7 +26,7 @@ export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anc
   const mergedAst = inject(injectionSection, mdAst, tocAst);
 
   if (anchors) {
-    const { generateAnchors } = await import('./lib/anchors');
+    const { generateAnchors } = await import('./lib/anchors.js');
 
     generateAnchors(tocAst, mergedAst);
   }
