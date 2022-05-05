@@ -4,6 +4,7 @@ pkgs.mkShell {
   name = "vuedoc";
   nativeBuildInputs = [
     pkgs.nodejs-12_x
+    pkgs.yarn
   ];
   shellHook = ''
     mkdir -p .nix-node

@@ -1,46 +1,61 @@
 image: node:lts-alpine
 
+include:
+  - template: SAST.gitlab-ci.yml
+
 stages:
-  - test
+  - tests
+  - security
   - publish
 
 code quality:
-  stage: test
+  stage: tests
   script:
-    - npm ci
-    - npm run lint
+    - yarn install
+    - yarn run lint
 
-npm outdated:
-  stage: test
+dependencies outdated:
+  stage: tests
   script:
-    - npm ci
-    - npm outdated
+    - yarn install
+    - yarn outdated
   allow_failure: true
 
-security scan:
-  stage: test
+tests & coverage:
+  stage: tests
   script:
-    - npm audit --production
-  allow_failure: true
-
-test & coverage:
-  stage: test
-  script:
-    - npm it
+    - yarn install
+    - yarn test
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   artifacts:
     paths:
       - coverage/
 
-coverage report:
+dependencies check:
+  stage: security
+  needs: &tests-jobs
+    - code quality
+    - dependencies outdated
+    - tests & coverage
+  script:
+    - yarn audit --production
+
+sast:
+  stage: security
+  needs: *tests-jobs
+
+pages:
   stage: publish
+  needs: &security-jobs
+    - dependencies check
   dependencies:
-    - test & coverage
+    - tests & coverage
   script:
     - mv coverage/lcov-report/ public/
   artifacts:
     paths:
       - public
+    expire_in: 30 days
   only:
     - main
   environment:
@@ -49,22 +64,22 @@ coverage report:
 
 package:
   stage: publish
-  only:
-    - tags
+  needs: *security-jobs
   script:
-    - npm pack
+    - yarn pack
   artifacts:
     paths:
       - ./*.tgz
 
 publish:
   stage: publish
+  needs: *security-jobs
   only:
     - tags
     - triggers
   script:
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
-    - npm publish
+    - yarn publish
   environment:
     name: npm
     url: https://www.npmjs.com/package/gimtoc
