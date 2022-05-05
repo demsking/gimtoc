@@ -3,7 +3,7 @@
 pkgs.mkShell {
   name = "vuedoc";
   nativeBuildInputs = [
-    pkgs.nodejs-12_x
+    pkgs.nodejs-14_x
     pkgs.yarn
   ];
   shellHook = ''
