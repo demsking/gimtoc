@@ -13,11 +13,8 @@ export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anc
         result = filter(str, ele, arr);
       }
 
-      /* eslint-disable-next-line arrow-body-style */
-      return result && !ele.children.some(({ content }) => {
-        return content === injectionSection;
-      });
-    }
+      return result && !ele.children.some(({ content }) => content === injectionSection);
+    },
   };
 
   const mdAst = ast.parse(mdContent);

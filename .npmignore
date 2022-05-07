@@ -1,8 +1,8 @@
 test
 coverage
-scripts
 .*
-sample.js
-result.json
-yarn.lock
+*.nix
 *.tgz
+*.yml
+*.yaml
+*.svg
