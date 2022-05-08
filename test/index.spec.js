@@ -22,7 +22,7 @@ const mdContent = [
 ].join('\n');
 
 describe('gimtoc', () => {
-  it('it should successfully generate & inject toc', async () => {
+  it('it should successfully generate & inject toc', async() => {
     const injectionSection = 'TOC';
     const expected = '# gimtoc\n\n## TOC\n\n- [Usage](#usage)\n- [License](#license)\n- [Title with spaces](#title-with-spaces)\n\n## Usage\n\nnpm install --save gimtoc\n\n## License\n\nMIT\n\n## Title with spaces\n\nBla bla\n';
     const mdContentWithToc = await gimtoc(mdContent, injectionSection);
@@ -30,10 +30,10 @@ describe('gimtoc', () => {
     expect(mdContentWithToc).toBe(expected);
   });
 
-  it('it should generate & inject toc with custom options.filter', async () => {
+  it('it should generate & inject toc with custom options.filter', async() => {
     const injectionSection = 'TOC';
     const options = {
-      filter (str, ele) {
+      filter(str, ele) {
         return ele.children.some(({ content }) => content !== 'License');
       },
     };
@@ -44,7 +44,7 @@ describe('gimtoc', () => {
     expect(mdContentWithToc).toBe(expected);
   });
 
-  it('it should generate & inject toc with options.anchor', async () => {
+  it('it should generate & inject toc with options.anchor', async() => {
     const injectionSection = 'TOC';
     const options = {
       anchors: true,
@@ -56,7 +56,7 @@ describe('gimtoc', () => {
     expect(mdContentWithToc).toBe(expected);
   });
 
-  it('it should ignore injection of anchors on title with existing anchors', async () => {
+  it('it should ignore injection of anchors on title with existing anchors', async() => {
     const injectionSection = 'TOC';
     const options = {
       anchors: true,

@@ -6,7 +6,7 @@ import toMarkdown from 'ast-to-markdown';
 export async function gimtoc(mdContent, injectionSection, { firsth1 = false, anchors = false, filter } = {}) {
   const opts = {
     firsth1,
-    filter (str, ele, arr) {
+    filter(str, ele, arr) {
       let result = true;
 
       if (filter instanceof Function) {
